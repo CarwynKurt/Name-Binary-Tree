@@ -125,3 +125,25 @@ def build_tree(elements):
     return root
 
 # Binary Tree Creation
+if __name__ == '__main__':
+    full_name = ["C", "A", "R", "W", "Y", "N", "K", "U", "R", "T", "S", "A", "R", "I", "M", "A", "D", "O"]
+    full_name_tree = build_tree(full_name)
+
+    print("Does C appear in the binary tree? ", full_name_tree.search("C"))
+    print(full_name_tree.in_order_traversal())
+    print(full_name_tree.post_order_traversal())
+    print(full_name_tree.pre_order_traversal())
+    print(full_name_tree.find_max())
+    print(full_name_tree.find_min())
+
+    full_name_tree.delete("W")
+    print("After deleting W ", full_name_tree.in_order_traversal())
+
+    full_name = ["C", "A", "R", "W", "Y", "N", "K", "U", "R", "T", "S", "A", "R", "I", "M", "A", "D", "O"]
+    full_name_tree.delete("C")
+    print("After deleting C ", full_name_tree.in_order_traversal())
+
+    full_name = ["C", "A", "R", "W", "Y", "N", "K", "U", "R", "T", "S", "A", "R", "I", "M", "A", "D", "O"]
+    full_name_tree.delete("R")
+    print("After deleting R ", full_name_tree.in_order_traversal())
+
