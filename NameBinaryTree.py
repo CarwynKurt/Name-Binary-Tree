@@ -5,13 +5,29 @@ class BinarySearchTreeNode:
         self.left = None
         self.right = None
 
-# Create data for binary tree
+    # Create data for binary tree
+    def add_child(self, data):
+        if data == self.data:
+            return
+
+        if data < self.data:
+            # add data in left subtree
+            if self.left:
+                self.left.add_child(data)
+            else:
+                self.left = BinarySearchTreeNode(data)
+        else:
+            # add data in right subtree
+            if self.right:
+                self.right.add_child(data)
+            else:
+                self.right = BinarySearchTreeNode(data)
+
 # In Order Traversal
 # Post Order Traversal
 # Pre Order Traversal
 # Search Option
 # Find Max
-# Find Min
 # Delete Function
 # Build Binary Tree
 # Binary Tree Creation
