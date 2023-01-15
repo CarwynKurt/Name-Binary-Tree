@@ -83,7 +83,12 @@ class BinarySearchTreeNode:
             return self.data
         return self.right.find_max()
 
-# Find Min
+    # Find Min
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
+
 # Delete Function
 # Build Binary Tree
 # Binary Tree Creation
