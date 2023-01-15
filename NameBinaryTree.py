@@ -89,6 +89,31 @@ class BinarySearchTreeNode:
             return self.data
         return self.left.find_min()
 
-# Delete Function
+    # Delete Function
+    def delete(self, val):
+        if val < self.data:
+            if self.left:
+                self.left.delete(val)
+        elif val > self.data:
+            if self.right:
+                self.right.delete(val)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            if self.left is None:
+                return self.right
+            if self.right is None:
+                return self.right
+
+            min_val = self.right.find_min()
+            self.data = min_val
+            self.right = self.right.delete(min_val)
+
+            max_val = self.left.find_max()
+            self.data = max_val
+            self.left = self.left.delete(max_val)
+
+        return self
+
 # Build Binary Tree
 # Binary Tree Creation
