@@ -77,7 +77,12 @@ class BinarySearchTreeNode:
                 return self.right.search(val)
             else:
                 return False
-# Find Max
+    # Find Max
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        return self.right.find_max()
+
 # Find Min
 # Delete Function
 # Build Binary Tree
